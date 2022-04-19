@@ -1,0 +1,10 @@
+.Clock{
+    display: flex;
+    flex-direction: column;
+    border: 7px solid #13353a;
+    border-radius: 50%;
+    width: 270px;
+    height: 270px;
+    justify-content: center;
+    align-items: center;
+}
