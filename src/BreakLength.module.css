@@ -14,3 +14,11 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.breakLength .breakInfo button{
+    border:none;
+    font-size: 40px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
