@@ -6,11 +6,13 @@ import classes from "./SessionLength.module.css"
 function SessionLength(props) {
     const [session, setSession] = useState(25)
     function increment() {
-        props.secondSetter(seconds => seconds + 60)
-        setSession(seconds => seconds + 1)
+        if (props.checker === true) {
+            props.secondSetter((session + 1) * 60)
+            setSession(seconds => seconds + 1)
+        }
     }
     function decrement() {
-        if (session !== 0) {
+        if (session !== 1 && props.checker === true) {
             setSession(seconds => seconds - 1)
             props.secondSetter((session - 1) * 60)
         }
