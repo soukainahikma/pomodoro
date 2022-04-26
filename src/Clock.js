@@ -2,7 +2,6 @@ import classes from './Clock.module.css'
 function Clock(props) {
     let minutes = Math.floor(props.seconds / 60)
     let seconds = Math.floor(props.seconds % 60)
-    console.log(seconds)
     return (<div className={classes.Clock}>
         <div>Session</div>
         <div className={props.seconds >= 60 ? classes.timerPrimary: classes.timerDanger}>

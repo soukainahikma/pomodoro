@@ -10,6 +10,7 @@ import SessionLength from './SessionLength';
 function App() {
   const [seconds, setSeconds] = useState(25 * 60);
   const [secondtimer, setSecondTimer] = useState();
+
   function start() {
     const secondtimer = setInterval(
       () => {
@@ -40,12 +41,13 @@ function App() {
     setSeconds(25 * 60)
     clearInterval(secondtimer);
   }
+
   return (
     <div className={classes.app}>
       <div>25 + 5 Clock</div>
       <div className={classes.appInfo}>
-        <BreakLength />
-        <SessionLength secondSetter={setSeconds} />
+        <BreakLength seconds={seconds} secondSetter={setSeconds}/>
+        <SessionLength second={seconds} secondSetter={setSeconds} />
       </div>
       <Clock seconds={seconds} />
       <div className={classes.appButtons}>

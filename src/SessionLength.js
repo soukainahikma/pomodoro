@@ -10,8 +10,10 @@ function SessionLength(props) {
         setSession(seconds => seconds + 1)
     }
     function decrement() {
-        props.secondSetter(seconds => seconds - 60)
-        setSession(seconds => seconds - 1)
+        if (session !== 0) {
+            setSession(seconds => seconds - 1)
+            props.secondSetter((session - 1) * 60)
+        }
     }
     return (<div className={classes.sessionLength}>
         <div>Session Length</div>

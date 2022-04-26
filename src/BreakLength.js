@@ -6,12 +6,11 @@ import classes from "./BreakLength.module.css"
 function BreakLength(props) {
     const [Break, setBreak] = useState(5)
     function increment() {
-        // props.secondSetter(seconds => seconds + 60)
         setBreak(seconds => seconds + 1)
     }
     function decrement() {
-        // props.secondSetter(seconds => seconds - 60)
-        setBreak(seconds => seconds - 1)
+        if (Break !== 1)
+            setBreak(seconds => seconds - 1)
     }
     return (<div className={classes.breakLength}>
         <div>Break Length</div>
